@@ -104,10 +104,10 @@ Este método eliminará todos los productos de un carrito según su id
 Este router usa las rutas http://localhost:8080/products y http://localhost:8080/carts/646b7bbcb035a38e23da5ad8 específicadas en la guía de rutas
 
 
-### NUEVAS IMPLEMENTACIONES<br>
+# NUEVAS IMPLEMENTACIONES<br>
 Se agregó passport al proyecto para agregar una estrategía local y una que permite registrarse con github, y con ese cambio se crearon 2 archivos en los que se almacena la lógica de los métodos.
 
-## Métodos de passport.config.js<br>
+### Métodos de passport.config.js<br>
 
 - Método register de passport
 Contiene la lógica del método POST de registro de sessions.router.js
@@ -118,7 +118,7 @@ Contiene la lógica del método POST de login de sessions.router.js
 - Método de registro con github
 Permite registrarse con github
 
-## Métodos de sessions.config.js<br>
+### Métodos de sessions.config.js<br>
 
 - Metódo POST (para registrarse)<br>
 http://localhost:8080/register (esta ruta es de la vista el método post de registro se encuentra en session.router.js como router.post '/register')<br>
@@ -141,12 +141,6 @@ Se añadieron nuevos métodos para poder ver los cambios que se hacen al registr
 http://localhost:8080/api/sessions/github<br>
 http://localhost:8080/api/sessions/github-callback
 
-## Métodos del router views.router.js<br>
+### Métodos del router views.router.js<br>
 
 En este router se renderizan las vistas de registro y de login mostradas en las rutas anotadas del router session.router.js, solo que en session.router.js se encuentra la lógica para que el funcionamiento de esas vistas funcione
-
-
-
-
-
-
