@@ -143,4 +143,4 @@ http://localhost:8080/api/sessions/github-callback
 
 ### Métodos del router views.router.js<br>
 
-En este router se renderizan las vistas de registro y de login mostradas en las rutas anotadas del router session.router.js, solo que en session.router.js se encuentra la lógica para que el funcionamiento de esas vistas funcione
+En este router se renderizan las vistas de registro y de login mostradas en las rutas anotadas del router session.router.js, solo que en sessions.router.js se encuentra la lógica para que el funcionamiento de esas vistas funcione
