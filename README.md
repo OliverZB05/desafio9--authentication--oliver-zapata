@@ -1,4 +1,4 @@
-# desafio8--cookies-session-storage--oliver-zapata
+# desafio9--authentication--oliver-zapata
 
 ## Pasos para ejecutarlo
 
@@ -103,7 +103,22 @@ Este método eliminará todos los productos de un carrito según su id
 ### (Los métodos este router solo se pueden en la web usando el navegador del lado del cliente)<br>
 Este router usa las rutas http://localhost:8080/products y http://localhost:8080/carts/646b7bbcb035a38e23da5ad8 específicadas en la guía de rutas
 
-### Métodos del router session.router.js<br>
+
+### NUEVAS IMPLEMENTACIONES<br>
+Se agregó passport al proyecto para agregar una estrategía local y una que permite registrarse con github, y con ese cambio se crearon 2 archivos en los que se almacena la lógica de los métodos.
+
+## Métodos de passport.config.js<br>
+
+- Método register de passport
+Contiene la lógica del método POST de registro de sessions.router.js
+
+- Método login de passport
+Contiene la lógica del método POST de login de sessions.router.js
+
+- Método de registro con github
+Permite registrarse con github
+
+## Métodos de sessions.config.js<br>
 
 - Metódo POST (para registrarse)<br>
 http://localhost:8080/register (esta ruta es de la vista el método post de registro se encuentra en session.router.js como router.post '/register')<br>
@@ -111,15 +126,26 @@ Con este método se envían los datos del usuario a la base de datos
 
 - Metódo POST (para iniciar sesión)<br>
 http://localhost:8080 o http://localhost:8080/login (esta ruta es de la vista el método post de registro se encuentra en session.router.js como router.post '/login')<br>
-Para ingresar los datos de registro y redirigirte luego a la vista de productos (ahora con los datos del usuario incorporados)
+Para ingresar los datos de registro y redirigirte luego a la vista de productos (ahora con la opción de registrarse con github)
 
 - Método POST (para cerrar sesión) <br>
 http://localhost:8080/api/sessions/logout <br>
 Para destruir la sesión (salirse de la sesión)
 
-### Métodos del router views.login.js<br>
+- Método POST (para reset) <br>
+http://localhost:8080/api/sessions/reset <br>
+Para cambiar la contraseña de un usuario especificado
+
+- Métodos GET de github <br>
+Se añadieron nuevos métodos para poder ver los cambios que se hacen al registrarse con github, estos métodos son:<br>
+http://localhost:8080/api/sessions/github<br>
+http://localhost:8080/api/sessions/github-callback
+
+## Métodos del router views.router.js<br>
 
 En este router se renderizan las vistas de registro y de login mostradas en las rutas anotadas del router session.router.js, solo que en session.router.js se encuentra la lógica para que el funcionamiento de esas vistas funcione
+
+
 
 
 
